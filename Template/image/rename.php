@@ -1,0 +1,1 @@
+<li><?=$this->modal->medium('edit', t('Rename'), 'AttachmentHandler', 'rename', array('task_id' => $task['id'], 'file_id' => $file['id'], 'plugin' => 'EAR'))?></li>
