@@ -42,6 +42,6 @@ class Plugin extends Base
     
     public function getPluginHomepage()
     {
-        return "https://github.com/Chaosmeister/EAR"
+        return "https://github.com/Chaosmeister/EAR";
     }
 }
