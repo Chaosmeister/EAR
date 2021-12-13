@@ -8,16 +8,8 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->hook->attach("template:task-file:images:dropdown", "EAR:image/rename");
-    }
-
-    public function getClasses()
-    {
-        return [
-            'Plugin\EAR\Model' => [
-                'TaskFileModelEx'
-            ]
-        ];
+        $this->template->hook->attach("template:task-file:images:dropdown", "EAR:rename/attachment");
+        $this->template->hook->attach("template:task-file:documents:dropdown", "EAR:rename/attachment");
     }
 
     public function getPluginName()
@@ -37,7 +29,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.0';
+        return '1.1.0';
     }
     
     public function getPluginHomepage()
