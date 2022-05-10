@@ -10,6 +10,9 @@ class Plugin extends Base
     {
         $this->template->hook->attach("template:task-file:images:dropdown", "EAR:rename/attachment");
         $this->template->hook->attach("template:task-file:documents:dropdown", "EAR:rename/attachment");
+        
+        $this->template->hook->attach("template:project-overview:images:dropdown", "EAR:rename/attachment");
+        $this->template->hook->attach("template:project-overview:documents:dropdown", "EAR:rename/attachment");
     }
 
     public function getPluginName()
@@ -29,7 +32,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.1.0';
+        return '1.1.1';
     }
     
     public function getPluginHomepage()
