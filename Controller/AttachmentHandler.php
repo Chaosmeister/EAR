@@ -8,11 +8,9 @@ class AttachmentHandler extends BaseController
 {
     public function rename()
     {
-        $task = $this->getTask();
         $file = $this->getFile();
 
-        $this->response->html($this->template->render('EAR:task_file/rename', array(
-            'task' => $task,
+        $this->response->html($this->template->render('EAR:file/rename', array(
             'file' => $file,
         )));
     }
@@ -31,11 +29,18 @@ class AttachmentHandler extends BaseController
                 $values['name'] .= "." . $ext;
             }
 
-            $this->db->table('task_has_files')->eq('id', $file['id'])->save($values);
+            $this->db->startTransaction();
+            if (isset($file["task_id"])) {
+                $this->db->table('task_has_files')->eq('id', $file['id'])->save($values);
+            }
+            else
+            {
+                $this->db->table('project_has_files')->eq('id', $file['id'])->save($values);
+            }
+            $this->db->closeTransaction();
 
             $this->flash->success(t('Success'));
-
-            $this->response->redirect($this->helper->url->to('TaskViewController', 'show', array('task_id' => $file['task_id'])));
+            $this->response->redirect("", true);
         }
         else
         {
