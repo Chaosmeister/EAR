@@ -39,4 +39,9 @@ class Plugin extends Base
     {
         return "https://github.com/Chaosmeister/EAR";
     }
+    
+    public function getCompatibleVersion()
+    {
+        return '>=1.2.23';
+    }
 }
