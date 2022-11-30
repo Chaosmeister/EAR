@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\EAR\Controller;
+namespace Kanboard\Plugin\EnableAttachmentRenaming\Controller;
 
 use Kanboard\Controller\BaseController;
 
