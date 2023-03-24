@@ -1,5 +1,5 @@
 <?php
-$params = array('file_id' => $file['id'], 'plugin' => 'EAR');
+$params = array('file_id' => $file['id'], 'plugin' => 'EnableAttachmentRenaming');
 if (isset($file["task_id"]))
 {
     $params["task_id"] = $file["task_id"];

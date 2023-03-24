@@ -10,7 +10,7 @@ class AttachmentHandler extends BaseController
     {
         $file = $this->getFile();
 
-        $this->response->html($this->template->render('EAR:file/rename', array(
+        $this->response->html($this->template->render('EnableAttachmentRenaming:file/rename', array(
             'file' => $file,
         )));
     }
