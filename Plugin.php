@@ -8,11 +8,11 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->hook->attach("template:task-file:images:dropdown", "EAR:rename/attachment");
-        $this->template->hook->attach("template:task-file:documents:dropdown", "EAR:rename/attachment");
+        $this->template->hook->attach("template:task-file:images:dropdown", "EnableAttachmentRenaming:rename/attachment");
+        $this->template->hook->attach("template:task-file:documents:dropdown", "EnableAttachmentRenaming:rename/attachment");
         
-        $this->template->hook->attach("template:project-overview:images:dropdown", "EAR:rename/attachment");
-        $this->template->hook->attach("template:project-overview:documents:dropdown", "EAR:rename/attachment");
+        $this->template->hook->attach("template:project-overview:images:dropdown", "EnableAttachmentRenaming:rename/attachment");
+        $this->template->hook->attach("template:project-overview:documents:dropdown", "EnableAttachmentRenaming:rename/attachment");
     }
 
     public function getPluginName()
