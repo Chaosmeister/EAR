@@ -4,6 +4,10 @@ if (isset($file["task_id"]))
 {
     $params["task_id"] = $file["task_id"];
 }
+else if (isset($file["project_id"]))
+{
+    $params["project_id"] = $file["project_id"];
+}
 ?>
 <li>
 <?=$this->modal->medium('edit', t('Rename'), 'AttachmentHandler', 'rename', $params);?>
