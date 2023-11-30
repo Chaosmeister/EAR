@@ -4,6 +4,10 @@ if (isset($file["task_id"]))
 {
     $params["task_id"] = $file["task_id"];
 }
+elseif (isset($file["project_id"]))
+{
+    $params["project_id"] = $file["project_id"];
+}
 ?>
 
 <form method="post" action="<?= $this->url->href('AttachmentHandler', 'update', $params) ?>" autocomplete="off">
